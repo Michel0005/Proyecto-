@@ -1,3 +1,4 @@
 # Proyecto-
 - 
-<img width="532" height="418" alt="Screenshot 2025-08-23 141802" src="https://github.com/user-attachments/assets/1d1c0c6f-1212-4b02-b219-dc7435b1e523" />
+<img width="573" height="410" alt="image" src="https://github.com/user-attachments/assets/453895a3-3a2c-449f-9117-3c378b83a06c" />
+
