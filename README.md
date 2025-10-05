@@ -1,4 +1,5 @@
 # Proyecto-
 - 
-<img width="573" height="410" alt="image" src="https://github.com/user-attachments/assets/453895a3-3a2c-449f-9117-3c378b83a06c" />
+<img width="1004" height="728" alt="image" src="https://github.com/user-attachments/assets/11125d2d-8b52-4710-b139-f24153919d0b" />
+
 
