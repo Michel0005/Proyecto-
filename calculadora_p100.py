@@ -1,12 +1,8 @@
-#Definicion de terminos 
 
-P100BP = 150000000  #cantidad de puntos requeridos para max
-LVM = 50  #cantidad de niveles por prestigio 
-PMAX = 100 #cantidad de prestigios 
-BPPP = 1500000 #cantidad de puntos para 1 prestigio 
-
-
-#reducir nombres para facilidad de acceso 
+P100BP = 150000000 
+LVM = 50   
+PMAX = 100 
+BPPP = 1500000 
 
 def calcular_puntos_faltantes(prestigo, bp):
     total_requerido = prestigo * BPPP
