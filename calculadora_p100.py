@@ -66,26 +66,68 @@ def obtener_datos_deseados ():
         "bp_disponibles": bp
     }
 
+MATRIZ = [
+    {"prestigio_deseado": 25,
+      "prestigio_actual": 1,
+      "su_nivel": 1,
+      "bp_disponibles": 250000000
+      },
+     {"prestigio_deseado": 50,
+      "prestigio_actual": 1,
+      "su_nivel": 1,
+      "bp_disponibles": 250000000
+      },
+     {"prestigio_deseado": 75,
+      "prestigio_actual": 1,
+      "su_nivel": 1,
+      "bp_disponibles": 250000000
+      },
+     {"prestigio_deseado": 100,
+      "prestigio_actual": 1,
+      "su_nivel": 1,
+      "bp_disponibles": 250000000
+      }
+]
+
+
+fuente_datos = None 
+while fuente_datos not in ["M", "A"]:
+    print("\n Seleccione la fuente de datos:")
+    fuente_datos = input ("Esriba 'M' o 'A':").upper()
+    if fuente_datos not in ["M", "A"]:
+        print ("entrada no valida intente de nuevo.")
+
 lista_resultados = []
-personajes = 0
-while personajes <= 0:
-    try:
-        personajes = int(input("\n con cuantos personajes va a realizar el calculo?"))
-        if personajes <= 0 :
-            print ("ingresa un numero positivo.")
-    except ValueError:
-        print ("entrada no valida")
-    
-for indice in range(personajes):
-    print (f"\n personaje {indice + 1}")
+datos_a_calcular = []
 
-    datos = obtener_datos_deseados()
+if fuente_datos == "A":
+    print (f"\n Usando datos de la matriz predifinada con {len(MATRIZ)} personajes.")
+    datos_a_calcular = MATRIZ
+    num_calculos = len(MATRIZ)
+else:
+    num_calculos = 0
+    while num_calculos <= 0:
+        try: 
+            num_calculos = int(input("\n ¿Con cuantos personajes va a realizar el calculo? "))
+            if num_calculos <= 0:
+                print ("ingresa un numero positivo.")
+        except ValueError:
+            print ("entrada no valida")
 
+    print ("\n preparado para la entrada manual ")
+
+for indice in range(num_calculos):
+    print(f"\n personaje {indice + 1}")
+
+    if fuente_datos == "M":
+        datos = obtener_datos_deseados()
+    else:
+        datos = datos_a_calcular[indice]
     bp_faltantes = calcular_puntos_faltantes(datos["prestigio_deseado"], datos["bp_disponibles"])
     puntos_actuales_gastados, puntos_gastados_en_total = calcular_puntos_gastados(datos["prestigio_actual"], datos["su_nivel"])
-    
+
     resultado = {
-        "cálculo": indice  + 1, 
+        "cálculo": indice + 1,
         "p_deseado": datos["prestigio_deseado"],
         "p_actual": datos["prestigio_actual"],
         "bp_faltantes": bp_faltantes,
@@ -93,9 +135,8 @@ for indice in range(personajes):
     }
     lista_resultados.append(resultado)
 
-
-print ("\n" + "="*50 )
-print ("Resultados:")
+print("\n" + "="*50)
+print("Resultados:")
 print("="*50)
 
 for resultado in lista_resultados:
